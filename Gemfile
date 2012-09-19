@@ -5,6 +5,10 @@ gem 'rails', '3.2.8'
 # syntax highlight
 gem 'codemirror-rails'
 
+# view
+gem 'slim'
+
+
 gem 'pg'
 
 gem 'json'

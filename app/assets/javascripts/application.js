@@ -12,4 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require codemirror
+//= require codemirror/modes/javascript
+//= require codemirror/modes/xml
+//= require codemirror/modes/css
+//= require codemirror/modes/htmlmixed
 //= require_tree .
+
+$(document).ready(function(){
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    mode: "text/html",
+    tabMode: "indent"
+  });
+});
