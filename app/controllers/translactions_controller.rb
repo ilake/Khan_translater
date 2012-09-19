@@ -2,7 +2,9 @@ class TranslactionsController < ApplicationController
   def create
     @mappings = Mapping.all
     @mappings.each do |map|
-      params[:code] = params[:code].gsub(map.before, map.after)
+      params[:code] = params[:code].gsub(/#{map.before}/i) do |s|
+        "#{s}#{map.after}"
+      end
     end
 
     @article = Article.new(:code => params[:code])
