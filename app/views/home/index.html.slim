@@ -2,8 +2,17 @@
   h1 Khan Translater, Paste you code below
 .row
   .span8
-    form
+    = simple_form_for(@article, :url => translate_path, :html => {:class => 'form-horizontal' }) do |form|
       textarea id="code" name="code"
-        | <!-- Past Your code here -->
+        | #{@article.code}
+      .form-actions
+        = form.button :submit, 'Translate', :class => 'btn btn-primary'
   .span4
-    h2 mapping column
+    table class="table table-striped"
+      thead
+        th Before
+        th After
+      - @mappings.each do |map|
+        tr
+          td.before = map.before
+          td.after  = map.after

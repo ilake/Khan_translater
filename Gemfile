@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'active_attr'
 
 # syntax highlight
 gem 'codemirror-rails'
@@ -8,12 +9,16 @@ gem 'codemirror-rails'
 # view
 gem 'slim'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "simple_form", :git => "git://github.com/plataformatec/simple_form.git"
 
 
 gem 'pg'
 
 gem 'json'
 
+group :development do
+  gem 'annotate'
+end
 
 group :development, :test do  
   gem "rspec-rails"
