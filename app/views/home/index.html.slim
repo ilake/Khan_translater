@@ -1,13 +1,13 @@
 .page-header
   h1 Khan Translater, Paste you code below
 .row
-  .span8
+  .span9
     = simple_form_for(@article, :url => translate_path, :html => {:class => 'form-horizontal' }) do |form|
       textarea id="code" name="code"
         | #{@article.code}
       .form-actions
         = form.button :submit, 'Translate', :class => 'btn btn-primary'
-  .span4
+  .span3
     = link_to "New mapping", new_mapping_path, :class => "btn btn-primary"
     table class="table table-striped"
       thead
