@@ -18,9 +18,14 @@
 //= require codemirror/modes/xml
 //= require codemirror/modes/css
 //= require codemirror/modes/htmlmixed
+//= require jquery.purr
+//= require best_in_place
+//= require stickies
 //= require_tree .
 
 $(document).ready(function(){
+  $('.best_in_place').best_in_place();
+
   var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
     mode: "text/html",

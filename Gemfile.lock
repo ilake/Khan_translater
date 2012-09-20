@@ -16,6 +16,12 @@ GIT
       railties (>= 3.1)
       therubyracer (>= 0.10.2)
 
+GIT
+  remote: git://github.com/techbang/stickies.git
+  revision: 5b18fae852f723befcc0b12a52ae3960a2721c00
+  specs:
+    stickies (0.1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,6 +58,9 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
+    best_in_place (1.1.2)
+      jquery-rails
+      rails (~> 3.1)
     builder (3.0.3)
     codemirror-rails (2.33)
       railties (~> 3.0)
@@ -157,6 +166,7 @@ PLATFORMS
 DEPENDENCIES
   active_attr
   annotate
+  best_in_place
   codemirror-rails
   coffee-rails (~> 3.2.1)
   jquery-rails
@@ -167,5 +177,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form!
   slim
+  stickies!
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)

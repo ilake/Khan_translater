@@ -1,0 +1,5 @@
+= simple_form_for @mapping, :url => mappings_path, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :before
+  = f.input :after
+  .form-actions
+    = f.submit

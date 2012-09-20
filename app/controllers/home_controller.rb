@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @mappings = Mapping.all
-    @article = Article.new(:code => '<!-- Past Your code here -->')
+    @mappings = Mapping.order("before")
+    @article = Article.new(:code => '<!-- Paste Your code here -->')
   end
 end

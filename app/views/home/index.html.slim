@@ -8,11 +8,13 @@
       .form-actions
         = form.button :submit, 'Translate', :class => 'btn btn-primary'
   .span4
+    = link_to "New mapping", new_mapping_path, :class => "btn btn-primary"
     table class="table table-striped"
       thead
         th Before
         th After
       - @mappings.each do |map|
         tr
-          td.before = map.before
-          td.after  = map.after
+          td.before = best_in_place map, :before
+          td.after  = best_in_place map, :after
+          td.delete = link_to "Delete", mapping_path(map), :method => :delete, :confirm => 'Are you sure ?'

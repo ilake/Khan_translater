@@ -10,6 +10,8 @@ gem 'codemirror-rails'
 gem 'slim'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "simple_form", :git => "git://github.com/plataformatec/simple_form.git"
+gem 'best_in_place'
+gem "stickies", :git => "git://github.com/techbang/stickies.git"
 
 
 gem 'pg'

@@ -1,26 +1,4 @@
 class MappingsController < ApplicationController
-  # GET /mappings
-  # GET /mappings.json
-  def index
-    @mappings = Mapping.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @mappings }
-    end
-  end
-
-  # GET /mappings/1
-  # GET /mappings/1.json
-  def show
-    @mapping = Mapping.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @mapping }
-    end
-  end
-
   # GET /mappings/new
   # GET /mappings/new.json
   def new
@@ -32,10 +10,6 @@ class MappingsController < ApplicationController
     end
   end
 
-  # GET /mappings/1/edit
-  def edit
-    @mapping = Mapping.find(params[:id])
-  end
 
   # POST /mappings
   # POST /mappings.json
@@ -44,7 +18,10 @@ class MappingsController < ApplicationController
 
     respond_to do |format|
       if @mapping.save
-        format.html { redirect_to @mapping, notice: 'Mapping was successfully created.' }
+        format.html { 
+          notice_stickie('Mapping was successfully created.')
+          redirect_to root_url
+        }
         format.json { render json: @mapping, status: :created, location: @mapping }
       else
         format.html { render action: "new" }
@@ -75,9 +52,7 @@ class MappingsController < ApplicationController
     @mapping = Mapping.find(params[:id])
     @mapping.destroy
 
-    respond_to do |format|
-      format.html { redirect_to mappings_url }
-      format.json { head :no_content }
-    end
+    notice_stickie('Mapping was successfully deleted.')
+    redirect_to root_url
   end
 end
