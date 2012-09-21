@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+#
+DEFAULT_MAPPING_CONFIG.each do |k, v|
+  Mapping.create( :before => k, :after => v)
+end
